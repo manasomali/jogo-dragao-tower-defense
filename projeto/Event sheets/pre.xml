@@ -1,0 +1,31 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>pre</name>
+    <events>
+        <event-block sid="9731033804628954">
+            <conditions>
+                <condition id="3" name="On touched object" sid="9708542876327277" type="Touch">
+                    <param id="0" name="Object">mapa</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="7731497523152825" type="System">
+                    <param id="0" name="Layout">mapa1</param>
+                </action>
+            </actions>
+        </event-block>
+        <event-block sid="2465169517511934">
+            <conditions>
+                <condition id="3" name="On touched object" sid="103964538321734" type="Touch">
+                    <param id="0" name="Object">mapa2</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-2" name="Go to layout" sid="8988877168789807" type="System">
+                    <param id="0" name="Layout">mapa2</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>

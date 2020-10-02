@@ -1,0 +1,1040 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<c2eventsheet>
+    <!--All the 'name' attributes are ignored by Construct 2 - they are there for readability only.-->
+    <name>mapa1</name>
+    <events>
+        <variable constant="0" name="nivel" sid="5624521103015829" static="0" type="number">0</variable>
+        <variable constant="0" name="score" sid="4548744238301054" static="0" type="number">0</variable>
+        <variable constant="0" name="gold" sid="2511814453560376" static="0" type="number">400</variable>
+        <variable constant="0" name="vida" sid="426266639665602" static="0" type="number">50</variable>
+        <event-group description="" sid="6344484165598095" title="ia torres">
+            <sub-events>
+                <event-block sid="9265781948496913">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="1712719429066888" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Turret" id="0" name="Acquire target" sid="1283040911493331" type="torre1">
+                            <param id="0" name="Target">inimigo1</param>
+                        </action>
+                        <action behavior="Turret" id="0" name="Acquire target" sid="1788589363503909" type="torre1">
+                            <param id="0" name="Target">inimigo2</param>
+                        </action>
+                        <action behavior="Turret" id="0" name="Acquire target" sid="6959801039530446" type="torre2">
+                            <param id="0" name="Target">inimigo1</param>
+                        </action>
+                        <action behavior="Turret" id="0" name="Acquire target" sid="6673252111124756" type="torre2">
+                            <param id="0" name="Target">inimigo2</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="577169781767554">
+                    <conditions>
+                        <condition behavior="Turret" id="0" name="Has target" sid="8495783581591023" type="torre1" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="3902345453877503">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="67568269234323" type="torre1">
+                                    <param id="0" name="Instance variable">up</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2437368436438252">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="1383179017625162" type="System">
+                                            <param id="0" name="Interval (seconds)">0.7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="8486570531672563" type="torre1">
+                                            <param id="0" name="Object">tiro1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="8787433851971012">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="6248493561638192" type="torre1">
+                                    <param id="0" name="Instance variable">up</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="8683939164854368">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="9599771318773069" type="System">
+                                            <param id="0" name="Interval (seconds)">0.7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="4863274449970161" type="torre1">
+                                            <param id="0" name="Object">tiro1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="6743669156214743">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="9696502619988522" type="System">
+                                            <param id="0" name="Interval (seconds)">0.7</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="4434313816710822" type="torre1">
+                                            <param id="0" name="Object">tiro1</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block any="1" sid="8881325509195456">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="4906313471385955" type="tiro1" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1277034164498457" type="tiro1" />
+                    </actions>
+                </event-block>
+                <event-block sid="5571557231503383">
+                    <conditions>
+                        <condition id="-4" name="Is outside layout" sid="6642608634008372" type="tiro2" />
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="6352301149008561" type="tiro2" />
+                    </actions>
+                </event-block>
+                <event-block sid="4842448540656726">
+                    <conditions>
+                        <condition behavior="Turret" id="0" name="Has target" sid="9969442769046026" type="torre2" />
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="5336794434976289">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="9898811771144193" type="torre2">
+                                    <param id="0" name="Instance variable">up</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">0</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5412586624004166">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="5178754396576667" type="System">
+                                            <param id="0" name="Interval (seconds)">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="6014837297058475" type="torre2">
+                                            <param id="0" name="Object">tiro2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                        <event-block sid="2778790975756721">
+                            <conditions>
+                                <condition id="-7" name="Compare instance variable" sid="7432908068044308" type="torre2">
+                                    <param id="0" name="Instance variable">up</param>
+                                    <param id="1" name="Comparison">0</param>
+                                    <param id="2" name="Value">1</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="9927173477974697">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="1151326737972686" type="System">
+                                            <param id="0" name="Interval (seconds)">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="1582251966400084" type="torre2">
+                                            <param id="0" name="Object">tiro2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                                <event-block sid="5549991580305576">
+                                    <conditions>
+                                        <condition id="-6" name="Every X seconds" sid="1212279752549867" type="System">
+                                            <param id="0" name="Interval (seconds)">0.8</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="0" name="Spawn another object" sid="7887772449239834" type="torre2">
+                                            <param id="0" name="Object">tiro2</param>
+                                            <param id="1" name="Layer">1</param>
+                                            <param id="2" name="Image point">2</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="5959817960059265" title="ia inimigos">
+            <sub-events>
+                <event-block sid="175663026319564">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="5657428507435303" type="System" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="2207014841130898" type="inimigo1" />
+                        <action behavior="Pathfinding" id="4" name="Regenerate obstacle map" sid="7798391986038122" type="inimigo2" />
+                    </actions>
+                </event-block>
+                <event-block any="1" sid="8314695065091776">
+                    <conditions>
+                        <condition id="-18" name="On created" sid="6870337277933583" type="inimigo1" />
+                        <condition id="-18" name="On created" sid="2062809371992272" type="inimigo2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="3670395322102453" type="inimigo1">
+                            <param id="0" name="X">saphira.X</param>
+                            <param id="1" name="Y">saphira.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="0" name="Find path" sid="2311814015087136" type="inimigo2">
+                            <param id="0" name="X">saphira.X</param>
+                            <param id="1" name="Y">saphira.Y</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="1189280069672997" type="inimigo1">
+                            <param id="0" name="Obstacle">caminho</param>
+                        </action>
+                        <action behavior="Pathfinding" id="5" name="Add obstacle" sid="8137097745536205" type="inimigo2">
+                            <param id="0" name="Obstacle">caminho</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="4263717245722579">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="1198235175993692" type="inimigo1" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="5687381211681334" type="inimigo1" />
+                    </actions>
+                </event-block>
+                <event-block sid="1564674007811606">
+                    <conditions>
+                        <condition behavior="Pathfinding" id="0" name="On path found" sid="7683132020011388" type="inimigo2" />
+                    </conditions>
+                    <actions>
+                        <action behavior="Pathfinding" id="1" name="Move along path" sid="919739514247308" type="inimigo2" />
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="7121615955487166" title="vidas inimigos">
+            <sub-events>
+                <event-block sid="8724318777414174">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="6418960735768454" type="tiro1">
+                            <param id="0" name="Object">inimigo1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2039960867596368" type="inimigo1">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="8339403245413648" type="tiro1" />
+                    </actions>
+                </event-block>
+                <event-block sid="5123542746185901">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3754094447066946" type="tiro2">
+                            <param id="0" name="Object">inimigo1</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2419180878086625" type="inimigo1">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="9114039441960046" type="tiro2" />
+                    </actions>
+                </event-block>
+                <event-block sid="9619792685753631">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="8862469217769027" type="tiro1">
+                            <param id="0" name="Object">inimigo2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2744319262934393" type="inimigo2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="5662574098496315" type="tiro1" />
+                    </actions>
+                </event-block>
+                <event-block sid="7528863242529689">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="3067986032435855" type="tiro2">
+                            <param id="0" name="Object">inimigo2</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-12" name="Subtract from" sid="2661073817415981" type="inimigo2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="2861713233175345" type="tiro2" />
+                    </actions>
+                </event-block>
+                <event-block sid="6660591246172598">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="1886871812149166" type="inimigo1">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="5457460912391197" type="inimigo1" />
+                        <action id="-10" name="Add to" sid="9217262633258683" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="4346399033102833" type="System">
+                            <param id="0" name="Variable">gold</param>
+                            <param id="1" name="Value">100</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="9389917187770039">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="540615178694879" type="inimigo2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Destroy" sid="1810550247069287" type="inimigo2" />
+                        <action id="-10" name="Add to" sid="3008869797663309" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-10" name="Add to" sid="2114776862436157" type="System">
+                            <param id="0" name="Variable">gold</param>
+                            <param id="1" name="Value">200</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2116715481784103" title="barra de vida">
+            <sub-events>
+                <event-block sid="8974213131314726">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="1835538337776767" type="inimigo1">
+                            <param id="0" name="Object">saphira</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="8976266546727694" type="System">
+                            <param id="0" name="Variable">vida</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="7878968370528261" type="inimigo1" />
+                    </actions>
+                </event-block>
+                <event-block sid="935749627602819">
+                    <conditions>
+                        <condition id="0" name="On collision with another object" sid="2421249874409301" type="inimigo2">
+                            <param id="0" name="Object">saphira</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-11" name="Subtract from" sid="1222776890553679" type="System">
+                            <param id="0" name="Variable">vida</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                        <action id="-9" name="Destroy" sid="6145380945516521" type="inimigo2" />
+                    </actions>
+                </event-block>
+                <event-block sid="8882243421206625">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="9478117771529642" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-5" name="Set width" sid="7070010117276426" type="barra">
+                            <param id="0" name="Width">vida*20.52</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="3561550393941099">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="8519752719086816" type="System">
+                            <param id="0" name="Variable">vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-2" name="Go to layout" sid="7280336180090594" type="System">
+                            <param id="0" name="Layout">gameover</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="8364927362254479" title="textos">
+            <sub-events>
+                <event-block sid="5221268414679749">
+                    <conditions>
+                        <condition id="-1" name="Every tick" sid="3868914635936127" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="0" name="Set text" sid="7799065353083192" type="score">
+                            <param id="0" name="Text">&quot;&quot;&amp;score</param>
+                        </action>
+                        <action id="0" name="Set text" sid="2037660878308576" type="gold">
+                            <param id="0" name="Text">&quot;&quot;&amp;gold</param>
+                        </action>
+                        <action id="0" name="Set text" sid="7879037730921397" type="nivel">
+                            <param id="0" name="Text">&quot;&quot;&amp;nivel</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="1247774749298786" title="waves">
+            <sub-events>
+                <event-block sid="3369119866464831">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3140827047361468" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">0</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="3002680873591186" type="System">
+                            <param id="0" name="Variable">nivel</param>
+                            <param id="1" name="Value">1</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="3044402011823943">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="4068183308419664" type="System">
+                                    <param id="0" name="Interval (seconds)">10</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="1033470888740663" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1170653373425524" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2447459514492769" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="2245981145876616" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4988900403913206" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9784703127758367" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="7379205543539661" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5804963137618491" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="3317445514490639" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7800880616719074" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="9235842158520777" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4604463478083868" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="5018289922210941" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1912044825645974" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1122241239977128" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="716185681544585" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="3698195474636463" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6082728758052168" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="6599970497541348" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7072378200588416" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="9166901358019393" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8084055305489586" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="8035958283931625" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="553820966167007" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="7428948655488361" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7230174162880509" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1344949027439926" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="3356807275592561">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="1012376033871898" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">50</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="5260150241831281" type="System">
+                            <param id="0" name="Variable">nivel</param>
+                            <param id="1" name="Value">2</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6226376585390075">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="3295681369032305" type="System">
+                                    <param id="0" name="Interval (seconds)">16</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="8562142411600258" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7933461646904434" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="615818193515747" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5961873550483112" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1983284180888827" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7112317913617907" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="9451589471294226" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4574014258262921" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="5519240585347463" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4378054641572008" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1795905262108435" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6169855312628008" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4577836050830441" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1045334701920931" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2656317254173787" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7027308689475026" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2113806532180525" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4017493721552177" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="6159102027528008" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="4599053857663301">
+                    <conditions>
+                        <condition id="-14" name="Compare variable" sid="3811555225214789" type="System">
+                            <param id="0" name="Variable">score</param>
+                            <param id="1" name="Comparison">5</param>
+                            <param id="2" name="Value">75</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="-9" name="Set value" sid="2302716830127432" type="System">
+                            <param id="0" name="Variable">nivel</param>
+                            <param id="1" name="Value">3</param>
+                        </action>
+                    </actions>
+                    <sub-events>
+                        <event-block sid="6069002799770003">
+                            <conditions>
+                                <condition id="-6" name="Every X seconds" sid="1361377225728996" type="System">
+                                    <param id="0" name="Interval (seconds)">25</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="9827494986763749" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3572802295628583" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1765808541630934" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9447410502504474" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="104047747766781" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="1450200257111067" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1004490747753987" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="209493163887389" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4461037957787482" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="8262327927158823" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2571169873363754" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="6549507995102731" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="789426045546189" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="3330377738450686" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="7590690398058817" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="4393818129785434" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="1876826663042861" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="5712274340317388" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="2749601914236427" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="7768515901838113" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="4440764000347063" type="nascimento">
+                                    <param id="0" name="Object">inimigo1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-16" name="Wait" sid="9558983503673793" type="System">
+                                    <param id="0" name="Seconds">0.3</param>
+                                </action>
+                                <action id="0" name="Spawn another object" sid="3550778233103403" type="nascimento">
+                                    <param id="0" name="Object">inimigo2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="2576187088035632" title="spaw/up torre">
+            <sub-events>
+                <event-block sid="5383612680862978">
+                    <conditions>
+                        <condition id="-2" name="On start of layout" sid="4551561046110479" type="System" />
+                    </conditions>
+                    <actions>
+                        <action id="-10" name="Set value" sid="2006453472364157" type="torre1">
+                            <param id="0" name="Instance variable">up</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                        <action id="-10" name="Set value" sid="2610143946204894" type="torre2">
+                            <param id="0" name="Instance variable">up</param>
+                            <param id="1" name="Value">0</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="5599037165932326">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4562863378280626" type="Touch">
+                            <param id="0" name="Object">spawn</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="9640782076061718">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="5742185484915129" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">400</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="-3" name="Create object" sid="3431396425901647" type="System">
+                                    <param id="0" name="Object to create">escolha1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">Touch.X+5</param>
+                                    <param id="3" name="Y">Touch.Y</param>
+                                </action>
+                                <action id="-3" name="Create object" sid="8442166789230369" type="System">
+                                    <param id="0" name="Object to create">escolha2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="X">Touch.X-5</param>
+                                    <param id="3" name="Y">Touch.Y</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="8662004694483052" type="spawn" />
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5987482525293063">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1882523244020856" type="Touch">
+                            <param id="0" name="Object">escolha1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="2884549964556733">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="8498302168843281" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">200</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="5276469364419325" type="escolha1">
+                                    <param id="0" name="Object">torre1</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="9589194071125259" type="escolha1" />
+                                <action id="-9" name="Destroy" sid="6956498704884193" type="escolha2" />
+                                <action id="-11" name="Subtract from" sid="2134748836704547" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Value">200</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="5636339975918965">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="1336521923567717" type="Touch">
+                            <param id="0" name="Object">escolha2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="6782459969300809">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="1454099409823765" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">400</param>
+                                </condition>
+                            </conditions>
+                            <actions>
+                                <action id="0" name="Spawn another object" sid="6593480411242742" type="escolha2">
+                                    <param id="0" name="Object">torre2</param>
+                                    <param id="1" name="Layer">1</param>
+                                    <param id="2" name="Image point">0</param>
+                                </action>
+                                <action id="-9" name="Destroy" sid="5312757185285852" type="escolha2" />
+                                <action id="-9" name="Destroy" sid="4540302442128756" type="escolha1" />
+                                <action id="-11" name="Subtract from" sid="4114765944796897" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Value">400</param>
+                                </action>
+                            </actions>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="1567232697846278">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="4173520486939125" type="Touch">
+                            <param id="0" name="Object">torre1</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="4008686095598117">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3996647178228499" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1000</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="5686416767136617">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="4966426951478252" type="torre1">
+                                            <param id="0" name="Instance variable">up</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="7558049483670922" type="System">
+                                            <param id="0" name="Variable">gold</param>
+                                            <param id="1" name="Value">1000</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="2916309013677086" type="torre1">
+                                            <param id="0" name="Instance variable">up</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="48789809969626" type="torre1">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+                <event-block sid="893890498588336">
+                    <conditions>
+                        <condition id="3" name="On touched object" sid="987239847662195" type="Touch">
+                            <param id="0" name="Object">torre2</param>
+                        </condition>
+                    </conditions>
+                    <actions />
+                    <sub-events>
+                        <event-block sid="1684412538315281">
+                            <conditions>
+                                <condition id="-14" name="Compare variable" sid="3981777586696833" type="System">
+                                    <param id="0" name="Variable">gold</param>
+                                    <param id="1" name="Comparison">5</param>
+                                    <param id="2" name="Value">1500</param>
+                                </condition>
+                            </conditions>
+                            <actions />
+                            <sub-events>
+                                <event-block sid="2035476094010247">
+                                    <conditions>
+                                        <condition id="-7" name="Compare instance variable" sid="2315975302631016" type="torre2">
+                                            <param id="0" name="Instance variable">up</param>
+                                            <param id="1" name="Comparison">0</param>
+                                            <param id="2" name="Value">0</param>
+                                        </condition>
+                                    </conditions>
+                                    <actions>
+                                        <action id="-11" name="Subtract from" sid="9908795825523258" type="System">
+                                            <param id="0" name="Variable">gold</param>
+                                            <param id="1" name="Value">1500</param>
+                                        </action>
+                                        <action id="-10" name="Set value" sid="9121006480767414" type="torre2">
+                                            <param id="0" name="Instance variable">up</param>
+                                            <param id="1" name="Value">1</param>
+                                        </action>
+                                        <action id="5" name="Set frame" sid="3800902782447236" type="torre2">
+                                            <param id="0" name="Frame number">1</param>
+                                        </action>
+                                    </actions>
+                                </event-block>
+                            </sub-events>
+                        </event-block>
+                    </sub-events>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-group description="" sid="455018419193594" title="animaçao">
+            <sub-events>
+                <event-block sid="262574766335843">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="4444225876837684" type="inimigo1">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">3</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="4760370581172369" type="inimigo1">
+                            <param id="0" name="Animation">&quot;Animation2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+                <event-block sid="6224347494956109">
+                    <conditions>
+                        <condition id="-7" name="Compare instance variable" sid="816381600759922" type="inimigo2">
+                            <param id="0" name="Instance variable">vida</param>
+                            <param id="1" name="Comparison">3</param>
+                            <param id="2" name="Value">5</param>
+                        </condition>
+                    </conditions>
+                    <actions>
+                        <action id="4" name="Set animation" sid="4963587512260657" type="inimigo2">
+                            <param id="0" name="Animation">&quot;Animation2&quot;</param>
+                            <param id="1" name="From">1</param>
+                        </action>
+                    </actions>
+                </event-block>
+            </sub-events>
+        </event-group>
+        <event-block sid="4649364292192719">
+            <conditions>
+                <condition id="-14" name="Compare variable" sid="2224563529779418" type="System">
+                    <param id="0" name="Variable">score</param>
+                    <param id="1" name="Comparison">5</param>
+                    <param id="2" name="Value">50</param>
+                </condition>
+            </conditions>
+            <actions>
+                <action id="-21" name="Reset global variables" sid="7694323926528147" type="System" />
+                <action id="-2" name="Go to layout" sid="9890738784862664" type="System">
+                    <param id="0" name="Layout">creditos</param>
+                </action>
+            </actions>
+        </event-block>
+    </events>
+</c2eventsheet>
